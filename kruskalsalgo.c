@@ -51,12 +51,17 @@ void minEdge(){
 
 int formsCycle(int x)
 {
-	int i=l;
+	int i=l,j=k;
 	while(conn[i]!=-1){
 		if(conn[i]==k)
 		return 1;
 		i=conn[i];
 	}
+	while(conn[j]!=-1){
+		j=conn[j];
+	}
+	if(i==j)
+		return 1;
 	return 0;
 	
 }
