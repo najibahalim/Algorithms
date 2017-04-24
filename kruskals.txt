@@ -1,0 +1,54 @@
+int formsCycle(int x){
+	int cedges[10],c,i,j;
+	c=find(cedges,x);
+	for(i=0;i<c;i++)
+	{
+		for(j=i;j<c;j++)
+		{
+			if(containsEdge(i,j,x))
+			{
+				return 1;
+			}
+		}
+	}
+	return 0;	
+	
+}
+int find(int cedges[10],int x)
+{
+	int i,c=0;
+	for(i=0;i<=x;i++)
+	{
+		if(t[i][0]==k || t[i][0]==l)
+			cedges[c++]=t[i][1];
+		if(t[i][1]==k || t[i][1]==l)
+			cedges[c++]=t[i][0];
+	}
+	return c;
+}
+
+int containsEdge2(int a,int b,int x)
+{
+	int i;
+	for(i=0;i<=x;i++)
+	{
+		if(t[i][0]==k && t[i][1]==l)
+			return 1;
+		if(t[i][0]==l && t[i][1]==k)
+			return 1;
+			
+	}
+	return 0;
+}
+
+int containsEdge(int a,int b,int x){
+	int i;
+	for(i=0;i<=x;i++){
+		if(t[i][0]==a && t[i][1]==b)
+			return 1;
+		if(t[i][0]==b && t[i][1]==a)
+			return 1;
+	}
+	return 0;
+}
+
