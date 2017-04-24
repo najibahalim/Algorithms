@@ -5,7 +5,7 @@ void zeroByOneKnapsack()
 	int i,j;
 	for(i=0;i<=n;i++)
 	{
-		b[i][j]=0;
+		b[i][0]=0;
 	}
 	for(i=0;i<=m;i++)
 	{
